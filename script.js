@@ -168,278 +168,370 @@ const deviceProfiles = {
 
 const questions = [
   {
-    prompt: "老师突然说实验方案要大改，你第一反应更像哪种？",
+    prompt: "【学习】老师临时说这周要加一次随堂测，你第一反应更像哪种？",
     options: [
       {
-        title: "先把不能乱动的地方理清，再慢慢改",
-        text: "我会先搞清楚哪些是底线、哪些最容易出问题，然后再安排后面的事。",
-        values: { reaction: 36, structure: 90, expression: 24, judgment: 68 },
+        title: "先把重点和范围圈出来，别慌着乱学",
+        text: "我会先判断哪些内容最值得补，尽量让自己回到可控节奏里。",
+        values: { reaction: 34, structure: 92, expression: 20, judgment: 72 },
         devices: { resistor: 3, opamp: 1 }
       },
       {
-        title: "先听听到底改了什么，缓一下再动",
-        text: "我一般不会马上冲，通常会先把信息接住，等自己想清楚了再说。",
-        values: { reaction: 20, structure: 48, expression: 58, judgment: 34 },
+        title: "嘴上说完了，但其实会先发会儿呆",
+        text: "我通常不会马上进入状态，会先消化一下焦虑，再决定怎么补。",
+        values: { reaction: 18, structure: 42, expression: 56, judgment: 28 },
         devices: { capacitor: 3, inductor: 1 }
       },
       {
-        title: "先挑最明显的一条路走起来",
-        text: "我更习惯先把事情推进起来，有动静之后再慢慢修细节。",
-        values: { reaction: 88, structure: 62, expression: 78, judgment: 86 },
+        title: "先找一套最像考点的题狠狠干起来",
+        text: "我更容易靠立刻开做把状态拉起来，做着做着再补细节。",
+        values: { reaction: 88, structure: 58, expression: 84, judgment: 86 },
         devices: { diode: 2, transistor: 2 }
       }
     ]
   },
   {
-    prompt: "大家开会越聊越乱的时候，你通常会变成哪种人？",
+    prompt: "【学习】一个知识点你已经卡了很久，你更像会怎么处理？",
     options: [
       {
-        title: "把大家拉回来，别越聊越飘",
-        text: "我会先收范围，让这场讨论别继续散下去。",
-        values: { reaction: 44, structure: 92, expression: 18, judgment: 72 },
-        devices: { resistor: 3, diode: 1 }
+        title: "回到定义和最基础的推导，重新拆",
+        text: "我宁愿慢一点，也想把底层逻辑补齐，不想靠蒙混过去。",
+        values: { reaction: 30, structure: 96, expression: 22, judgment: 70 },
+        devices: { resistor: 2, opamp: 2 }
       },
       {
-        title: "先把每个人的话都接住",
-        text: "我会先听完大家在想什么，再慢慢整理出重点。",
-        values: { reaction: 26, structure: 42, expression: 62, judgment: 28 },
-        devices: { capacitor: 3, opamp: 1 }
+        title: "先放一放，等脑子自己转过弯",
+        text: "我硬磕久了会更烦，通常会先缓一下，过阵子再回来。",
+        values: { reaction: 14, structure: 50, expression: 68, judgment: 34 },
+        devices: { capacitor: 2, inductor: 2 }
       },
       {
-        title: "抓住一个点，直接把气氛带起来",
-        text: "我会挑最有戏的一条思路，先把场子带动起来再说。",
-        values: { reaction: 80, structure: 58, expression: 96, judgment: 64 },
+        title: "直接去找最会的人问，先打通再说",
+        text: "我不太介意跳步骤，只要能先弄懂关键点，我就会立刻去做。",
+        values: { reaction: 86, structure: 52, expression: 78, judgment: 92 },
+        devices: { diode: 2, transistor: 2 }
+      }
+    ]
+  },
+  {
+    prompt: "【日常】假期原本想早起做事，结果起床已经中午了，你更像哪种反应？",
+    options: [
+      {
+        title: "重新排一下今天还能做什么，尽量别全盘报废",
+        text: "我会快速止损，把剩下的时间安排得稍微像样一点。",
+        values: { reaction: 46, structure: 88, expression: 24, judgment: 68 },
+        devices: { resistor: 3, opamp: 1 }
+      },
+      {
+        title: "先自责一阵，然后继续躺着刷手机",
+        text: "我有时会陷入“都这样了算了”的状态，恢复节奏需要一点时间。",
+        values: { reaction: 12, structure: 30, expression: 44, judgment: 20 },
+        devices: { capacitor: 2, inductor: 2 }
+      },
+      {
+        title: "那就从现在开始狠狠干，硬把进度追回来",
+        text: "我很容易被这种情况激出一种“现在就开始补回来”的劲头。",
+        values: { reaction: 90, structure: 60, expression: 94, judgment: 74 },
+        devices: { transistor: 3, diode: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【日常】室友在你最烦的时候又开始外放视频，你大概率会？",
+    options: [
+      {
+        title: "先忍一下，再挑合适的时机说",
+        text: "我不太想当场爆炸，更可能先稳住自己，再找机会讲清楚。",
+        values: { reaction: 22, structure: 76, expression: 30, judgment: 54 },
+        devices: { resistor: 2, capacitor: 2 }
+      },
+      {
+        title: "直接开口让他关掉，别磨叽",
+        text: "我如果已经烦了，通常会很直接，不想让问题继续拖着。",
+        values: { reaction: 82, structure: 70, expression: 40, judgment: 96 },
+        devices: { diode: 3, resistor: 1 }
+      },
+      {
+        title: "阴阳一句或者自己把气氛弄得很明显",
+        text: "我不一定正面说，但会让对方明显感觉到我不爽了。",
+        values: { reaction: 76, structure: 38, expression: 90, judgment: 62 },
         devices: { transistor: 3, inductor: 1 }
       }
     ]
   },
   {
-    prompt: "你平时学新东西，更像下面哪种节奏？",
+    prompt: "【人际】大家开会越聊越散的时候，你通常会变成哪种人？",
     options: [
       {
-        title: "先把基础打牢，不然心里不踏实",
-        text: "我会先把最基本的东西搞明白，有了框架才安心继续学。",
-        values: { reaction: 34, structure: 96, expression: 18, judgment: 66 },
+        title: "把范围收回来，先让这事有主线",
+        text: "我会开始帮大家定边界，不然继续聊下去只会更乱。",
+        values: { reaction: 44, structure: 94, expression: 18, judgment: 76 },
+        devices: { resistor: 3, opamp: 1 }
+      },
+      {
+        title: "先把每个人的意思都听完",
+        text: "我更像缓冲层，想先知道大家到底在纠结什么。",
+        values: { reaction: 24, structure: 40, expression: 64, judgment: 22 },
+        devices: { capacitor: 3, opamp: 1 }
+      },
+      {
+        title: "抓住一个能成的点，先把人带着往前走",
+        text: "我很容易在这种时候直接选一条路，边做边修。",
+        values: { reaction: 82, structure: 56, expression: 96, judgment: 72 },
+        devices: { transistor: 3, diode: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【人际】你和朋友因为一件小事有点别扭，你更像哪种？",
+    options: [
+      {
+        title: "想找个合适时间说开，别让它一直卡着",
+        text: "我不喜欢关系长期悬着，会想办法让事情回到正常状态。",
+        values: { reaction: 52, structure: 86, expression: 46, judgment: 82 },
+        devices: { opamp: 2, resistor: 2 }
+      },
+      {
+        title: "表面没事，其实会默默冷一阵",
+        text: "我不一定会马上翻脸，但情绪会先收起来，等自己缓过去再说。",
+        values: { reaction: 16, structure: 44, expression: 58, judgment: 26 },
+        devices: { capacitor: 3, inductor: 1 }
+      },
+      {
+        title: "如果我觉得是对方的问题，我会明显拉开距离",
+        text: "我对关系里的边界感很强，不想把精力浪费在反复消耗上。",
+        values: { reaction: 78, structure: 74, expression: 32, judgment: 98 },
+        devices: { diode: 3, resistor: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【恋爱】喜欢的人回你消息忽快忽慢，你一般会怎么想？",
+    options: [
+      {
+        title: "先观察一阵，不急着下结论",
+        text: "我会想先看看对方的节奏和状态，不想因为一两次就把自己搞乱。",
+        values: { reaction: 20, structure: 54, expression: 60, judgment: 30 },
+        devices: { capacitor: 3, opamp: 1 }
+      },
+      {
+        title: "如果我觉得不对劲，会主动确认关系走向",
+        text: "我不太喜欢暧昧不清，宁愿早点知道到底有没有必要继续投入。",
+        values: { reaction: 84, structure: 72, expression: 42, judgment: 96 },
+        devices: { diode: 3, resistor: 1 }
+      },
+      {
+        title: "嘴上说随便，心里已经脑补了一整季",
+        text: "我很容易被一点点信号带着走，情绪起伏会比较明显。",
+        values: { reaction: 74, structure: 34, expression: 94, judgment: 48 },
+        devices: { transistor: 3, capacitor: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【恋爱】如果你决定表白或摊牌，你更像下面哪种节奏？",
+    options: [
+      {
+        title: "先反复确认时机和对方状态",
+        text: "我会做很多心理建设，希望尽量把风险降到最低。",
+        values: { reaction: 26, structure: 90, expression: 28, judgment: 74 },
         devices: { resistor: 2, opamp: 2 }
       },
       {
-        title: "前面有点慢，但后面会突然开窍",
-        text: "我需要一点进入状态的时间，可一旦想通了，后劲会很强。",
-        values: { reaction: 16, structure: 60, expression: 82, judgment: 44 },
-        devices: { inductor: 3, capacitor: 1 }
+        title: "会憋很久，憋到实在憋不住才说",
+        text: "我不容易轻易开口，但一旦到临界点，就会一下子全说出来。",
+        values: { reaction: 18, structure: 46, expression: 82, judgment: 40 },
+        devices: { capacitor: 3, inductor: 1 }
       },
       {
-        title: "先抓到关键点，再一路带开",
-        text: "我喜欢先找到最核心的那个点，然后顺着它把整片内容串起来。",
-        values: { reaction: 84, structure: 56, expression: 72, judgment: 88 },
+        title: "感觉到了就冲，不想一直猜",
+        text: "我会更愿意直接给自己一个答案，哪怕结果不完美也比悬着强。",
+        values: { reaction: 92, structure: 58, expression: 88, judgment: 90 },
         devices: { diode: 2, transistor: 2 }
       }
     ]
   },
   {
-    prompt: "朋友情绪很满地来找你吐槽，你一般会怎么接？",
+    prompt: "【学习】做小组作业时，队友迟迟不交东西，你更可能怎么做？",
     options: [
       {
-        title: "先让对方把情绪放出来",
-        text: "我会先陪对方说，至少先让人缓下来再聊别的。",
-        values: { reaction: 24, structure: 40, expression: 56, judgment: 22 },
+        title: "先把框架和截止时间重新立住",
+        text: "我会主动把要求说清楚，让大家知道再拖会出什么问题。",
+        values: { reaction: 50, structure: 94, expression: 30, judgment: 78 },
+        devices: { resistor: 3, opamp: 1 }
+      },
+      {
+        title: "先自己补一部分，尽量别让整体垮掉",
+        text: "我不想当场撕破脸，通常会先接住烂摊子，再看后面怎么办。",
+        values: { reaction: 24, structure: 48, expression: 66, judgment: 24 },
         devices: { capacitor: 3, resistor: 1 }
       },
       {
-        title: "先抓问题重点，再给建议",
-        text: "我通常会很快判断问题在哪，然后直接告诉对方下一步可以怎么做。",
-        values: { reaction: 82, structure: 72, expression: 32, judgment: 94 },
-        devices: { diode: 3, opamp: 1 }
-      },
-      {
-        title: "边听边帮对方把事情理顺",
-        text: "我会一边听一边帮对方整理来龙去脉，尽量把事情变成一个能解决的问题。",
-        values: { reaction: 60, structure: 88, expression: 86, judgment: 90 },
-        devices: { opamp: 3, transistor: 1 }
-      }
-    ]
-  },
-  {
-    prompt: "碰到特别吵、特别乱、信息很多的环境，你通常会？",
-    options: [
-      {
-        title: "迅速过滤掉没用的信息",
-        text: "我通常很快就能分出来什么值得听，什么可以直接忽略。",
-        values: { reaction: 74, structure: 78, expression: 28, judgment: 96 },
-        devices: { diode: 3, resistor: 1 }
-      },
-      {
-        title: "先适应一下，找到自己的节奏",
-        text: "我不会立刻进入状态，但一旦调整过来，就能稳住很久。",
-        values: { reaction: 20, structure: 64, expression: 80, judgment: 46 },
-        devices: { inductor: 2, capacitor: 2 }
-      },
-      {
-        title: "主动把混乱重新整理一下",
-        text: "我会开始帮大家理顺信息和目标，让局面重新有条理。",
-        values: { reaction: 62, structure: 92, expression: 78, judgment: 88 },
-        devices: { opamp: 3, resistor: 1 }
-      }
-    ]
-  },
-  {
-    prompt: "如果让你带一个新项目开头，你更可能怎么做？",
-    options: [
-      {
-        title: "先把流程和规则订清楚",
-        text: "我会先把边界、分工和做事方式定好，再让大家开始动。",
-        values: { reaction: 40, structure: 94, expression: 26, judgment: 72 },
-        devices: { resistor: 2, opamp: 2 }
-      },
-      {
-        title: "先找个小突破口，把气氛带起来",
-        text: "我喜欢先做出一点明显进展，让大家一下子有干劲。",
-        values: { reaction: 86, structure: 54, expression: 94, judgment: 60 },
-        devices: { transistor: 3, diode: 1 }
-      },
-      {
-        title: "先慢慢攒资源，等时机成熟再发力",
-        text: "我更在意前期准备够不够，准备到位了再集中推进会更舒服。",
-        values: { reaction: 18, structure: 50, expression: 68, judgment: 38 },
-        devices: { capacitor: 2, inductor: 2 }
-      }
-    ]
-  },
-  {
-    prompt: "你对那种变化特别快的人和计划，通常是什么感觉？",
-    options: [
-      {
-        title: "太快了我会先有点抗拒",
-        text: "我不太喜欢被突然拽着跑，更习惯慢慢进入状态。",
-        values: { reaction: 14, structure: 72, expression: 78, judgment: 50 },
-        devices: { inductor: 3, resistor: 1 }
-      },
-      {
-        title: "可以变，但别乱变",
-        text: "我接受调整，只要别把原本稳住的东西一下子全打散。",
-        values: { reaction: 48, structure: 88, expression: 24, judgment: 66 },
-        devices: { resistor: 2, opamp: 2 }
-      },
-      {
-        title: "只要方向明确，我切得很快",
-        text: "如果我看得出该往哪边走，我通常能很快跟上甚至直接冲过去。",
-        values: { reaction: 90, structure: 62, expression: 44, judgment: 92 },
+        title: "直接点名催，实在不行就换人",
+        text: "我对这种拖全组后腿的情况忍耐度不高，会很快做取舍。",
+        values: { reaction: 86, structure: 76, expression: 44, judgment: 98 },
         devices: { diode: 3, transistor: 1 }
       }
     ]
   },
   {
-    prompt: "在一群人里，你的影响力一般更像哪种？",
+    prompt: "【生活】当你特别忙、消息又特别多的时候，你往往会变成哪种状态？",
     options: [
       {
-        title: "平时不抢镜，但很能稳住场面",
-        text: "别人未必第一眼注意到我，但真到关键时候会发现少了我不太行。",
-        values: { reaction: 42, structure: 90, expression: 22, judgment: 64 },
-        devices: { resistor: 3, capacitor: 1 }
+        title: "先分类处理，能回的回，不能回的稍后再说",
+        text: "我会尽量给事情排优先级，不让自己被信息洪水冲走。",
+        values: { reaction: 56, structure: 92, expression: 24, judgment: 82 },
+        devices: { opamp: 3, resistor: 1 }
       },
       {
-        title: "平时安静，关键时候突然很顶",
-        text: "我不是一直都很有存在感，但重要节点通常能一下子补上力量。",
-        values: { reaction: 22, structure: 48, expression: 72, judgment: 34 },
-        devices: { capacitor: 3, inductor: 1 }
+        title: "脑子会先卡住，然后谁都不想理",
+        text: "信息一多我容易短暂掉线，需要一点缓冲才能重新接上。",
+        values: { reaction: 14, structure: 36, expression: 50, judgment: 18 },
+        devices: { capacitor: 2, inductor: 2 }
       },
       {
-        title: "我一认真，场子就容易被带起来",
-        text: "我的状态和动作会比较容易影响周围人，常常能把气氛一起推起来。",
-        values: { reaction: 78, structure: 58, expression: 98, judgment: 62 },
-        devices: { transistor: 3, opamp: 1 }
-      }
-    ]
-  },
-  {
-    prompt: "你做决定的时候，通常更信哪一种感觉？",
-    options: [
-      {
-        title: "先判断这事到底行不行",
-        text: "我做决定时很看重明确标准，很多时候会先做一个清楚的取舍。",
-        values: { reaction: 86, structure: 76, expression: 30, judgment: 98 },
+        title: "会挑最重要的直接解决，其他先扔一边",
+        text: "我能迅速切出主次，但也可能因为太快而显得有点冷。",
+        values: { reaction: 88, structure: 68, expression: 36, judgment: 94 },
         devices: { diode: 3, resistor: 1 }
-      },
-      {
-        title: "先看看现在离理想状态差多远",
-        text: "我喜欢先比较现实和目标之间的差距，再想怎么把它慢慢调到更合适。",
-        values: { reaction: 60, structure: 90, expression: 82, judgment: 88 },
-        devices: { opamp: 3, capacitor: 1 }
-      },
-      {
-        title: "先看自己和局面的状态够不够",
-        text: "我不会立刻拍板，通常会先判断现在有没有足够的精力和条件去做这件事。",
-        values: { reaction: 18, structure: 54, expression: 74, judgment: 40 },
-        devices: { capacitor: 2, inductor: 2 }
       }
     ]
   },
   {
-    prompt: "如果让朋友形容你，他们更可能说哪句话？",
+    prompt: "【人际】别人对你随口说了一句“你最近状态不太对”，你更像会？",
     options: [
       {
-        title: "“你是真的稳。”",
-        text: "我给人的感觉通常是靠谱、稳当、不容易让事情失控。",
-        values: { reaction: 38, structure: 94, expression: 20, judgment: 64 },
-        devices: { resistor: 3, opamp: 1 }
-      },
-      {
-        title: "“你前面看着安静，后面会突然很能打。”",
-        text: "我可能不是一开始最显眼的那个，但到后面常常会越来劲。",
-        values: { reaction: 20, structure: 52, expression: 70, judgment: 36 },
-        devices: { capacitor: 2, inductor: 2 }
-      },
-      {
-        title: "“你一认真，大家都会被你带动。”",
-        text: "我一旦进入状态，通常会让周围人也跟着提起劲来。",
-        values: { reaction: 82, structure: 56, expression: 96, judgment: 68 },
-        devices: { transistor: 3, opamp: 1 }
-      }
-    ]
-  },
-  {
-    prompt: "你最舒服的合作关系，更像下面哪一种？",
-    options: [
-      {
-        title: "大家边界清楚，合作就会很顺",
-        text: "我喜欢分工清晰、规则明确，这样合作起来更省心。",
-        values: { reaction: 40, structure: 96, expression: 20, judgment: 70 },
-        devices: { resistor: 3, diode: 1 }
-      },
-      {
-        title: "大家能自然接住彼此的状态",
-        text: "我很在意合作时有没有那种顺滑感，不想每一步都卡一下。",
-        values: { reaction: 24, structure: 46, expression: 62, judgment: 30 },
+        title: "先想一想，对方是不是说中了什么",
+        text: "我会把这句话留在心里，慢慢消化，再判断要不要调整自己。",
+        values: { reaction: 20, structure: 56, expression: 62, judgment: 34 },
         devices: { capacitor: 3, opamp: 1 }
       },
       {
-        title: "能一起把一个目标越做越有劲",
-        text: "我喜欢那种彼此会互相带动、越做越有气势的合作关系。",
-        values: { reaction: 72, structure: 60, expression: 94, judgment: 66 },
-        devices: { transistor: 2, opamp: 2 }
+        title: "表面无所谓，转头开始疯狂复盘",
+        text: "我可能不会当场表现出来，但心里会把前前后后都想一遍。",
+        values: { reaction: 28, structure: 74, expression: 78, judgment: 56 },
+        devices: { inductor: 3, capacitor: 1 }
+      },
+      {
+        title: "直接问清楚：你具体觉得哪里不对",
+        text: "我更希望把话说实，不喜欢模糊提醒留在那里发酵。",
+        values: { reaction: 82, structure: 72, expression: 48, judgment: 92 },
+        devices: { diode: 2, opamp: 2 }
       }
     ]
   },
   {
-    prompt: "学模电学到脑子冒烟的时候，你一般怎么自救？",
+    prompt: "【恋爱】吵架的时候，你最容易出现哪种模式？",
     options: [
       {
-        title: "回到最基础的地方重新捋",
-        text: "我会先回头看最基本的定义和条件，把自己重新稳下来。",
-        values: { reaction: 34, structure: 98, expression: 18, judgment: 64 },
-        devices: { resistor: 2, opamp: 2 }
+        title: "努力把情绪按住，想把问题说清楚",
+        text: "哪怕我不爽，也会尽量让谈话留在能解决问题的轨道上。",
+        values: { reaction: 46, structure: 90, expression: 34, judgment: 84 },
+        devices: { opamp: 2, resistor: 2 }
       },
       {
-        title: "先停一下，让脑子缓口气",
-        text: "我需要一点空档，不然越学越糊，缓过来以后反而能继续。",
-        values: { reaction: 16, structure: 42, expression: 60, judgment: 26 },
+        title: "先沉默，等情绪退一点再谈",
+        text: "我在上头的时候不太会说好话，通常会先把自己抽离出来。",
+        values: { reaction: 18, structure: 50, expression: 54, judgment: 28 },
         devices: { capacitor: 3, inductor: 1 }
       },
       {
-        title: "先狠狠干一道最有感觉的题",
-        text: "我会先找一个突破口狠狠干一下，靠重新找回手感把自己拉回来。",
-        values: { reaction: 88, structure: 58, expression: 86, judgment: 90 },
-        devices: { diode: 2, transistor: 2 }
+        title: "一旦上头就会把积压的全倒出来",
+        text: "我可能平时忍着，但真吵起来时会很有冲击力，什么都想一次讲完。",
+        values: { reaction: 80, structure: 40, expression: 98, judgment: 58 },
+        devices: { transistor: 3, capacitor: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【生活】如果你连续几天状态很差、事情又堆着不动，你通常怎么救自己？",
+    options: [
+      {
+        title: "先把任务拆小，至少恢复一点秩序",
+        text: "我会先做最小的一步，让事情重新开始流动，而不是继续放着。",
+        values: { reaction: 42, structure: 92, expression: 26, judgment: 74 },
+        devices: { resistor: 3, opamp: 1 }
+      },
+      {
+        title: "先躲一会儿，等缓过劲再说",
+        text: "我知道这样不一定最高效，但如果状态太差，硬顶只会更乱。",
+        values: { reaction: 16, structure: 40, expression: 58, judgment: 24 },
+        devices: { capacitor: 3, inductor: 1 }
+      },
+      {
+        title: "会突然想狠狠干一波，把之前欠的都补回来",
+        text: "我有时会从很丧直接切到很猛，靠一阵冲刺把局面救回来。",
+        values: { reaction: 90, structure: 54, expression: 96, judgment: 68 },
+        devices: { transistor: 3, diode: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【学习】如果考试考砸了，你最像下面哪种后续反应？",
+    options: [
+      {
+        title: "先找出到底是哪里失误，下次别再犯",
+        text: "我更在意定位问题，想知道是方法错了还是节奏错了。",
+        values: { reaction: 48, structure: 94, expression: 22, judgment: 88 },
+        devices: { opamp: 3, resistor: 1 }
+      },
+      {
+        title: "先emo一下，短期内不太想碰那科",
+        text: "我需要先恢复心情，不然再看那科会更烦更抗拒。",
+        values: { reaction: 12, structure: 34, expression: 52, judgment: 20 },
+        devices: { capacitor: 2, inductor: 2 }
+      },
+      {
+        title: "会立刻找题再刷，想赶紧把面子赢回来",
+        text: "我不太能接受自己挂在那，会很想立刻证明这次只是失手。",
+        values: { reaction: 92, structure: 58, expression: 88, judgment: 82 },
+        devices: { transistor: 2, diode: 2 }
+      }
+    ]
+  },
+  {
+    prompt: "【人际】别人一直试探你的边界，你更像会怎么处理？",
+    options: [
+      {
+        title: "先提醒，再把规则说清楚",
+        text: "我不会一开始就翻脸，但会很明确地告诉对方哪里不能再碰。",
+        values: { reaction: 54, structure: 96, expression: 26, judgment: 90 },
+        devices: { resistor: 3, diode: 1 }
+      },
+      {
+        title: "会先忍，忍到某个点突然不想再理了",
+        text: "我前期可能看起来很能包容，但一旦积累过量，就会直接抽离。",
+        values: { reaction: 18, structure: 44, expression: 72, judgment: 32 },
+        devices: { capacitor: 2, inductor: 2 }
+      },
+      {
+        title: "当场切断，我没兴趣陪人反复试探",
+        text: "我对边界被消耗这件事很敏感，通常会快速做出拒绝。",
+        values: { reaction: 86, structure: 78, expression: 34, judgment: 100 },
+        devices: { diode: 3, resistor: 1 }
+      }
+    ]
+  },
+  {
+    prompt: "【综合】如果让熟人偷偷评价你的一个“毛病”，更可能是哪句？",
+    options: [
+      {
+        title: "“你有时候太稳了，稳到有点慢。”",
+        text: "我做事不容易失控，但也可能因为太想稳妥而错过一点时机。",
+        values: { reaction: 28, structure: 96, expression: 18, judgment: 72 },
+        devices: { resistor: 3, opamp: 1 }
+      },
+      {
+        title: "“你容易闷着，很多情绪要攒很久才说。”",
+        text: "我不太习惯即时表达，很多感受会先存在心里，拖久了才释放。",
+        values: { reaction: 14, structure: 42, expression: 76, judgment: 26 },
+        devices: { capacitor: 3, inductor: 1 }
+      },
+      {
+        title: "“你一上头就特别有冲击力，有点难挡。”",
+        text: "我一旦认定方向或进入情绪，整个人的存在感会一下子变得很强。",
+        values: { reaction: 84, structure: 52, expression: 98, judgment: 70 },
+        devices: { transistor: 3, diode: 1 }
       }
     ]
   }
