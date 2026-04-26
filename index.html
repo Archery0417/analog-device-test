@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测测你是模电里的哪个器件</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">SBTI · Semiconductor Behavioral Type Indicator</p>
+        <h1>测测你是模电里的哪个器件</h1>
+        <p class="hero-text">
+          把模电器件的工作特性，翻译成一套性格测试。看看你更像稳稳控流的电阻、
+          会蓄能回弹的电容，还是专门负责放大局面的运放。
+        </p>
+        <div class="hero-tags">
+          <span>12 道题</span>
+          <span>4 个维度</span>
+          <span>6 类器件人格</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-head">
+          <p class="section-kicker">器件样本柜</p>
+          <h2>6 类模电人格原型</h2>
+        </div>
+        <div class="chip-grid" aria-hidden="true">
+          <span class="chip-tile resistor-tile">电阻</span>
+          <span class="chip-tile capacitor-tile">电容</span>
+          <span class="chip-tile diode-tile">二极管</span>
+          <span class="chip-tile inductor-tile">电感</span>
+          <span class="chip-tile transistor-tile">三极管</span>
+          <span class="chip-tile opamp-tile">运放</span>
+        </div>
+        <p class="hero-card-note">纯娱乐向，但很适合学模电学到恍惚的时候做一下。</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel intro-panel" id="intro-panel">
+        <div class="panel-header">
+          <p class="section-kicker">测试说明</p>
+          <h2>题目会把器件行为映射到人的处理方式</h2>
+        </div>
+        <div class="intro-grid">
+          <article>
+            <h3>启动节奏</h3>
+            <p>你遇到变化时，是立刻导通，还是先蓄势再动作。</p>
+          </article>
+          <article>
+            <h3>稳定方式</h3>
+            <p>你更依赖规则和边界，还是会根据环境持续调谐。</p>
+          </article>
+          <article>
+            <h3>能量表达</h3>
+            <p>你的存在感是低耗稳定，还是会明显放大和带动全场。</p>
+          </article>
+          <article>
+            <h3>决策取向</h3>
+            <p>你会单向裁断、过滤噪声，还是倾向做整体平衡和校准。</p>
+          </article>
+        </div>
+        <button class="primary-button" id="start-button">开始测试</button>
+      </section>
+
+      <section class="panel quiz-panel hidden" id="quiz-panel">
+        <div class="progress-row">
+          <div>
+            <p class="section-kicker">答题中</p>
+            <h2 id="question-count">第 1 / 12 题</h2>
+          </div>
+          <span class="progress-badge" id="progress-badge">进度 8%</span>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <article class="question-card">
+          <h3 id="question-text"></h3>
+          <div class="options" id="options"></div>
+        </article>
+      </section>
+
+      <section class="panel result-panel hidden" id="result-panel">
+        <div class="result-top">
+          <div class="result-copy">
+            <p class="section-kicker">测试结果</p>
+            <h2 id="result-title"></h2>
+            <p class="result-subtitle" id="result-subtitle"></p>
+            <p class="result-overview" id="result-overview"></p>
+            <div class="result-highlights" id="result-highlights"></div>
+          </div>
+          <div class="result-visual">
+            <div class="visual-frame">
+              <img id="result-image" src="" alt="">
+            </div>
+          </div>
+        </div>
+
+        <section class="dimension-section">
+          <div class="section-head-inline">
+            <h3>你的四维画像</h3>
+            <p>每一维都来自答题过程中的累积偏好。</p>
+          </div>
+          <div class="dimension-grid" id="dimension-grid"></div>
+        </section>
+
+        <section class="device-section">
+          <div class="section-head-inline">
+            <h3>为什么会是这个器件</h3>
+            <p>把你的维度组合，翻译回器件的工作逻辑。</p>
+          </div>
+          <div class="device-notes" id="device-notes"></div>
+        </section>
+
+        <div class="result-actions">
+          <button class="secondary-button" id="restart-button">再测一次</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
